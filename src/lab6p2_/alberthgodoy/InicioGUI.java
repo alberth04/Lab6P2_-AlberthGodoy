@@ -7,6 +7,7 @@ package lab6p2_.alberthgodoy;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -819,6 +820,11 @@ public class InicioGUI extends javax.swing.JFrame {
         jPanel_ListarPersonas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 373, 254, -1));
 
         jButton_EliminarListaPersona.setText("Eliminar");
+        jButton_EliminarListaPersona.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_EliminarListaPersonaMouseClicked(evt);
+            }
+        });
         jPanel_ListarPersonas.add(jButton_EliminarListaPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 407, 98, -1));
 
         jTabbedPane1.addTab("Lista Personas", jPanel_ListarPersonas);
@@ -978,9 +984,9 @@ public class InicioGUI extends javax.swing.JFrame {
             String id = "";
             int cont = 0;
             for (int i = 0; i < listaPersonas.getSize(); i++) {
-                if (((Personas)listaPersonas.getElementAt(i)).getiD().equals(jTextF_IDPersona.getText())) {
+                if (((Personas) listaPersonas.getElementAt(i)).getiD().equals(jTextF_IDPersona.getText())) {
                     cont++;
-                } 
+                }
             }
             //Agregar id
             if (cont == 0) {
@@ -988,7 +994,7 @@ public class InicioGUI extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(jPanel_CrearPersona, "Ya tiene el id");
                 throw new Exception();
-                
+
             }
             String nombre = jTextF_NombrePersona3.getText();
             int edad = Integer.parseInt(jFormatT_EdadPersona.getText());
@@ -1006,7 +1012,7 @@ public class InicioGUI extends javax.swing.JFrame {
             }
             double altura = Double.parseDouble(jTextF_AlturaPersona1.getText());
             double peso = Double.parseDouble(jTextF_PesoPersona1.getText());
-            
+
             if (jCombo_TipoPersona1.getSelectedIndex() == 0) {
                 //Gerente
                 String usuario = jTextF_ModificarUsuarioPersona.getText();
@@ -1014,9 +1020,18 @@ public class InicioGUI extends javax.swing.JFrame {
                 String cargo = jCombo_CargoPersona.getSelectedItem().toString();
                 listaPersonas.addElement(new Gerente(usuario, password, cargo, id, nombre, edad, sexo, estadoCivil, peso, altura));
                 JOptionPane.showMessageDialog(jPanel_CrearPersona, "Gerente agregado");
-                
+
                 //Listarlas
-                Object[] personas;
+                int indexPersona = listaPersonas.getSize() - 1;
+                Gerente persona = (Gerente) listaPersonas.getElementAt(indexPersona);
+                Object[] newRow = {
+                    persona.getNombrel(),
+                    persona.getCargo()
+                };
+                DefaultTableModel tablemodel
+                        = (DefaultTableModel) jTable_ListarPersonas.getModel();
+                tablemodel.addRow(newRow);
+                jTable_ListarPersonas.setModel(tablemodel);
             } else {
                 //Personas General
                 String ocupacion = jTextF_OcupacionPersona1.getText();
@@ -1025,12 +1040,50 @@ public class InicioGUI extends javax.swing.JFrame {
                 double sueldo = Double.parseDouble(jTextF_SueldoPersona.getText());
                 listaPersonas.addElement(new PersonalGeneral(ocupacion, horario, tiempoTrabajo, sueldo, id, nombre, edad, sexo, estadoCivil, peso, altura));
                 JOptionPane.showMessageDialog(jPanel_CrearPersona, "Personal General Agregado");
+
+                //Listarlo
+                int indexPersona = listaPersonas.getSize() - 1;
+                PersonalGeneral persona = (PersonalGeneral) listaPersonas.getElementAt(indexPersona);
+                Object[] newRow = {
+                    persona.getNombrel(),
+                    persona.getOcupacion()
+                };
+                DefaultTableModel tablemodel
+                        = (DefaultTableModel) jTable_ListarPersonas.getModel();
+                tablemodel.addRow(newRow);
+                jTable_ListarPersonas.setModel(tablemodel);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(jPanel_CrearPersona, "No se agrego la persona");
             JOptionPane.showMessageDialog(jPanel_CrearPersona, e.getMessage());
         }
     }//GEN-LAST:event_jToggleButton1MouseClicked
+
+    private void jButton_EliminarListaPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_EliminarListaPersonaMouseClicked
+        //Eliminar la persona
+        if (jTable_ListarPersonas.getSelectedRow() >= 0) {
+
+            DefaultTableModel tablemodel
+                    = (DefaultTableModel) jTable_ListarPersonas.getModel();
+            int persona = jTable_ListarPersonas.getSelectedRow();
+            //Eliminar en el ComboBox
+
+            JOptionPane.showMessageDialog(this, tablemodel.getValueAt(jTable_ListarPersonas.getSelectedRow(), jTable_ListarPersonas.getSelectedColumn()).toString());
+            for (int i = 0; i < listaPersonas.getSize(); i++) {
+                if (tablemodel.getValueAt(jTable_ListarPersonas.getSelectedRow(), jTable_ListarPersonas.getSelectedColumn()).toString().equals(
+                ((Personas)listaPersonas.getElementAt(i)).getNombrel())) {
+                    listaPersonas.removeElement(i);
+                    JOptionPane.showMessageDialog(jPanel_CrearPersona, "Eliminada persona de la lista");
+                }
+            }
+
+            //Eliminar del jTable
+            tablemodel.removeRow(persona);
+            jTable_ListarPersonas.setModel(tablemodel);
+
+        }
+
+    }//GEN-LAST:event_jButton_EliminarListaPersonaMouseClicked
 
     /**
      * @param args the command line arguments
