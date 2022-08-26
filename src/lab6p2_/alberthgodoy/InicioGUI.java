@@ -5,7 +5,9 @@
  */
 package lab6p2_.alberthgodoy;
 
+import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -388,11 +390,17 @@ public class InicioGUI extends javax.swing.JFrame {
         jLabel22.setText("Datos del Tipo Objeto: ");
         jPanel_CrearObjeto.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
 
-        jComboBox_PersonaIngresoObjeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox_PersonaIngresoObjeto.setModel(listaPersonas);
         jPanel_CrearObjeto.add(jComboBox_PersonaIngresoObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 130, -1));
 
         jLabel23.setText("Tipo de Objeto:");
         jPanel_CrearObjeto.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 100, -1));
+
+        jButton_ColorObjeto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_ColorObjetoMouseClicked(evt);
+            }
+        });
         jPanel_CrearObjeto.add(jButton_ColorObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 50, 20));
 
         jLabel24.setText("Descripcion Suela: ");
@@ -425,7 +433,12 @@ public class InicioGUI extends javax.swing.JFrame {
         jLabel28.setText("Calidad: ");
         jPanel_CrearObjeto.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 60, -1));
 
-        jComboBox_TipoObjeto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox_TipoObjeto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Zapatos", "Ropa", "Objetos de Hogar" }));
+        jComboBox_TipoObjeto1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox_TipoObjeto1ItemStateChanged(evt);
+            }
+        });
         jPanel_CrearObjeto.add(jComboBox_TipoObjeto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 130, -1));
 
         jLabel29.setText("Persona que lo ingreso: ");
@@ -446,12 +459,14 @@ public class InicioGUI extends javax.swing.JFrame {
 
         jLabel32.setText("Talla: ");
         jPanel_CrearObjeto.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 60, -1));
+
+        jSpinner_ComodidadZapatos.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
         jPanel_CrearObjeto.add(jSpinner_ComodidadZapatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 500, 50, -1));
 
         jLabel33.setText("Zapatos: ");
         jPanel_CrearObjeto.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 60, -1));
 
-        jComboBox_TallaRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox_TallaRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S", "M", "L", "XL" }));
         jComboBox_TallaRopa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_TallaRopaActionPerformed(evt);
@@ -505,6 +520,11 @@ public class InicioGUI extends javax.swing.JFrame {
         jPanel_CrearObjeto.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 110, -1));
 
         jButton1.setText("Agregar Objeto");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -1071,7 +1091,7 @@ public class InicioGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, tablemodel.getValueAt(jTable_ListarPersonas.getSelectedRow(), jTable_ListarPersonas.getSelectedColumn()).toString());
             for (int i = 0; i < listaPersonas.getSize(); i++) {
                 if (tablemodel.getValueAt(jTable_ListarPersonas.getSelectedRow(), jTable_ListarPersonas.getSelectedColumn()).toString().equals(
-                ((Personas)listaPersonas.getElementAt(i)).getNombrel())) {
+                        ((Personas) listaPersonas.getElementAt(i)).getNombrel())) {
                     listaPersonas.removeElement(i);
                     JOptionPane.showMessageDialog(jPanel_CrearPersona, "Eliminada persona de la lista");
                 }
@@ -1084,6 +1104,85 @@ public class InicioGUI extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton_EliminarListaPersonaMouseClicked
+
+    private void jButton_ColorObjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_ColorObjetoMouseClicked
+        jButton_ColorObjeto.setBackground(JColorChooser.showDialog(jPanel_CrearObjeto, "Elija Color", Color.yellow));
+    }//GEN-LAST:event_jButton_ColorObjetoMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        try {
+            //Tipo objeto
+            Color color = jButton_ColorObjeto.getBackground();
+            String descripcionObjeto = jTextArea_DescripcionObjeto1.getText();
+            String marca = jTextField_MarcaObjeto1.getText();
+            int size = Integer.parseInt(jTextField_SizeObjeto.getText());
+            String calidad = jTextField_CalidadObjeto1.getText();
+            Personas persona = (Personas) jComboBox_PersonaIngresoObjeto.getSelectedItem();
+            //Zapatos
+            if (jComboBox_TipoObjeto1.getSelectedIndex() == 0) {
+                double talla = Double.parseDouble(jTextField_TallaZaptos.getText());
+                String descripcionSuela = jTextArea_DescripcionSuelaZapatos1.getText();
+                int comodidad = (int) jSpinner_ComodidadZapatos.getValue();
+                //Agregar Objeto
+                listaObjetos.addElement(new Zapatos(talla, descripcionSuela, comodidad, color, descripcionObjeto, marca, size, calidad, persona));
+                //Listar Objeto
+                
+            }
+        } catch (Exception e) {
+        }
+
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jComboBox_TipoObjeto1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox_TipoObjeto1ItemStateChanged
+        try {
+            //tipo zapato
+            switch (jComboBox_TipoObjeto1.getSelectedIndex()) {
+                case 0 -> {
+                    //Zapatos
+                    jTextField_TallaZaptos.setEnabled(true);
+                    jSpinner_ComodidadZapatos.setEnabled(true);
+                    jTextArea_DescripcionSuelaZapatos1.setEnabled(true);
+                    //Ropa
+                    jComboBox_TallaRopa.setEnabled(false);
+                    jTextField_TipoTelaRopa1.setEnabled(false);
+                    jTextField_PaisElaboradoRopa1.setEnabled(false);
+                    //Hogar
+                    jTextArea_DescripcionObjetoHogar.setEnabled(false);
+                    jTextArea_InstruccionObjetoHogar.setEnabled(false);
+                    jTextField_PaisElaboradoRopa.setEnabled(false);
+                }
+                case 1 -> {
+                    //Zapatos
+                    jTextField_TallaZaptos.setEnabled(false);
+                    jSpinner_ComodidadZapatos.setEnabled(false);
+                    jTextArea_DescripcionSuelaZapatos1.setEnabled(false);
+                    //Ropa
+                    jComboBox_TallaRopa.setEnabled(true);
+                    jTextField_TipoTelaRopa1.setEnabled(true);
+                    jTextField_PaisElaboradoRopa1.setEnabled(true);
+                    //Hogar
+                    jTextArea_DescripcionObjetoHogar.setEnabled(false);
+                    jTextArea_InstruccionObjetoHogar.setEnabled(false);
+                    jTextField_PaisElaboradoRopa.setEnabled(false);
+                }
+                default -> {
+                    //Zapatos
+                    jTextField_TallaZaptos.setEnabled(false);
+                    jSpinner_ComodidadZapatos.setEnabled(false);
+                    jTextArea_DescripcionSuelaZapatos1.setEnabled(false);
+                    //Ropa
+                    jComboBox_TallaRopa.setEnabled(false);
+                    jTextField_TipoTelaRopa1.setEnabled(false);
+                    jTextField_PaisElaboradoRopa1.setEnabled(false);
+                    //Hogar
+                    jTextArea_DescripcionObjetoHogar.setEnabled(true);
+                    jTextArea_InstruccionObjetoHogar.setEnabled(true);
+                    jTextField_PaisElaboradoRopa.setEnabled(true);
+                }
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jComboBox_TipoObjeto1ItemStateChanged
 
     /**
      * @param args the command line arguments
