@@ -6,15 +6,17 @@
 package lab6p2_.alberthgodoy;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author godoy
  */
 public class InicioGUI extends javax.swing.JFrame {
-    
+
     DefaultComboBoxModel listaPersonas = new DefaultComboBoxModel();
     DefaultComboBoxModel listaObjetos = new DefaultComboBoxModel();
+
     /**
      * Creates new form InicioGUI
      */
@@ -45,11 +47,11 @@ public class InicioGUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextF_IDPersona = new javax.swing.JTextField();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton_Casado = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jRadioButton_Femenino = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton_Soltero = new javax.swing.JRadioButton();
         jTextF_HorarioPersona = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -222,6 +224,7 @@ public class InicioGUI extends javax.swing.JFrame {
 
         jPanel_CrearPersona.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jCombo_CargoPersona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente de planta", "Gerente Sucursal" }));
         jCombo_CargoPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCombo_CargoPersonaActionPerformed(evt);
@@ -238,6 +241,7 @@ public class InicioGUI extends javax.swing.JFrame {
         jLabel6.setText("cms");
         jPanel_CrearPersona.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 60, -1));
 
+        buttonSexo.add(jRadioButton_Masculino);
         jRadioButton_Masculino.setText("M");
         jPanel_CrearPersona.add(jRadioButton_Masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 50, -1));
         jPanel_CrearPersona.add(jTextF_SueldoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 90, -1));
@@ -263,13 +267,14 @@ public class InicioGUI extends javax.swing.JFrame {
         });
         jPanel_CrearPersona.add(jTextF_IDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 140, -1));
 
-        jRadioButton2.setText("Casado");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonEstadoCivil.add(jRadioButton_Casado);
+        jRadioButton_Casado.setText("Casado");
+        jRadioButton_Casado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                jRadioButton_CasadoActionPerformed(evt);
             }
         });
-        jPanel_CrearPersona.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, -1, -1));
+        jPanel_CrearPersona.add(jRadioButton_Casado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, -1, -1));
 
         jLabel7.setText("Sexo:");
         jPanel_CrearPersona.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 60, -1));
@@ -277,16 +282,18 @@ public class InicioGUI extends javax.swing.JFrame {
         jLabel5.setText("Nombre: ");
         jPanel_CrearPersona.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 60, -1));
 
+        buttonSexo.add(jRadioButton_Femenino);
         jRadioButton_Femenino.setText("F");
         jPanel_CrearPersona.add(jRadioButton_Femenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
 
-        jRadioButton1.setText("Soltero");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonEstadoCivil.add(jRadioButton_Soltero);
+        jRadioButton_Soltero.setText("Soltero");
+        jRadioButton_Soltero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                jRadioButton_SolteroActionPerformed(evt);
             }
         });
-        jPanel_CrearPersona.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+        jPanel_CrearPersona.add(jRadioButton_Soltero, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
         jPanel_CrearPersona.add(jTextF_HorarioPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 140, -1));
 
         jLabel9.setText("Lbs");
@@ -306,7 +313,6 @@ public class InicioGUI extends javax.swing.JFrame {
         jPanel_CrearPersona.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, -1, -1));
         jPanel_CrearPersona.add(jTextF_NombrePersona3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 140, -1));
 
-        jPasswordField_PasswordPersona.setText("jPasswordField1");
         jPasswordField_PasswordPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField_PasswordPersonaActionPerformed(evt);
@@ -356,6 +362,11 @@ public class InicioGUI extends javax.swing.JFrame {
         jPanel_CrearPersona.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 60, -1));
 
         jToggleButton1.setText("Agregar Persona");
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton1MouseClicked(evt);
+            }
+        });
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -834,7 +845,7 @@ public class InicioGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Lista Objetos", jPanel_ListarObjetos);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -843,13 +854,13 @@ public class InicioGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormatT_EdadPersonaActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void jRadioButton_SolteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_SolteroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_jRadioButton_SolteroActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void jRadioButton_CasadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_CasadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_jRadioButton_CasadoActionPerformed
 
     private void jCombo_CargoPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCombo_CargoPersonaActionPerformed
         // TODO add your handling code here:
@@ -936,16 +947,90 @@ public class InicioGUI extends javax.swing.JFrame {
         try {
             //Si es de tipo Gerente bloqueamos la otra opcion
             if (jCombo_TipoPersona1.getSelectedIndex() == 0) {
-                
+
                 jTextF_OcupacionPersona1.setEnabled(false);
                 jTextF_HorarioPersona.setEnabled(false);
                 jTextF_TiempoTrabajandoPersona.setEnabled(false);
                 jTextF_SueldoPersona.setEnabled(false);
-                        
+
+                jTextF_UsuarioPersona1.setEnabled(true);
+                jPasswordField_PasswordPersona.setEnabled(true);
+                jCombo_CargoPersona.setEnabled(true);
+            } else {
+                jTextF_UsuarioPersona1.setEnabled(false);
+                jPasswordField_PasswordPersona.setEnabled(false);
+                jCombo_CargoPersona.setEnabled(false);
+
+                jTextF_OcupacionPersona1.setEnabled(true);
+                jTextF_HorarioPersona.setEnabled(true);
+                jTextF_TiempoTrabajandoPersona.setEnabled(true);
+                jTextF_SueldoPersona.setEnabled(true);
             }
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jCombo_TipoPersona1ItemStateChanged
+
+    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
+        //Agregar persona
+        try {
+            //Es Gerente
+            //ID UNICO
+            String id = "";
+            int cont = 0;
+            for (int i = 0; i < listaPersonas.getSize(); i++) {
+                if (((Personas)listaPersonas.getElementAt(i)).getiD().equals(jTextF_IDPersona.getText())) {
+                    cont++;
+                } 
+            }
+            //Agregar id
+            if (cont == 0) {
+                id = jTextF_IDPersona.getText();
+            } else {
+                JOptionPane.showMessageDialog(jPanel_CrearPersona, "Ya tiene el id");
+                throw new Exception();
+                
+            }
+            String nombre = jTextF_NombrePersona3.getText();
+            int edad = Integer.parseInt(jFormatT_EdadPersona.getText());
+            String sexo = "";
+            if (jRadioButton_Masculino.isSelected()) {
+                sexo = "Masculino";
+            } else {
+                sexo = "Femenino";
+            }
+            String estadoCivil = "";
+            if (jRadioButton_Soltero.isSelected()) {
+                estadoCivil = "Soltero";
+            } else {
+                estadoCivil = "Casado";
+            }
+            double altura = Double.parseDouble(jTextF_AlturaPersona1.getText());
+            double peso = Double.parseDouble(jTextF_PesoPersona1.getText());
+            
+            if (jCombo_TipoPersona1.getSelectedIndex() == 0) {
+                //Gerente
+                String usuario = jTextF_ModificarUsuarioPersona.getText();
+                String password = jPasswordField_PasswordPersona.getText();
+                String cargo = jCombo_CargoPersona.getSelectedItem().toString();
+                listaPersonas.addElement(new Gerente(usuario, password, cargo, id, nombre, edad, sexo, estadoCivil, peso, altura));
+                JOptionPane.showMessageDialog(jPanel_CrearPersona, "Gerente agregado");
+                
+                //Listarlas
+                Object[] personas;
+            } else {
+                //Personas General
+                String ocupacion = jTextF_OcupacionPersona1.getText();
+                String horario = jTextF_HorarioPersona.getText();
+                int tiempoTrabajo = Integer.parseInt(jTextF_TiempoTrabajandoPersona.getText());
+                double sueldo = Double.parseDouble(jTextF_SueldoPersona.getText());
+                listaPersonas.addElement(new PersonalGeneral(ocupacion, horario, tiempoTrabajo, sueldo, id, nombre, edad, sexo, estadoCivil, peso, altura));
+                JOptionPane.showMessageDialog(jPanel_CrearPersona, "Personal General Agregado");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(jPanel_CrearPersona, "No se agrego la persona");
+            JOptionPane.showMessageDialog(jPanel_CrearPersona, e.getMessage());
+        }
+    }//GEN-LAST:event_jToggleButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1099,14 +1184,14 @@ public class InicioGUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_ModificarPersona;
     private javax.swing.JPasswordField jPasswordField_ModificarPasswordPersona;
     private javax.swing.JPasswordField jPasswordField_PasswordPersona;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton_Casado;
     private javax.swing.JRadioButton jRadioButton_Femenino;
     private javax.swing.JRadioButton jRadioButton_Masculino;
     private javax.swing.JRadioButton jRadioButton_ModificarCasado;
     private javax.swing.JRadioButton jRadioButton_ModificarFemenino1;
     private javax.swing.JRadioButton jRadioButton_ModificarMasculino1;
     private javax.swing.JRadioButton jRadioButton_ModificarSoltero;
+    private javax.swing.JRadioButton jRadioButton_Soltero;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
