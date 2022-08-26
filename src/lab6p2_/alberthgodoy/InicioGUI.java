@@ -5,12 +5,16 @@
  */
 package lab6p2_.alberthgodoy;
 
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author godoy
  */
 public class InicioGUI extends javax.swing.JFrame {
-
+    
+    DefaultComboBoxModel listaPersonas = new DefaultComboBoxModel();
+    DefaultComboBoxModel listaObjetos = new DefaultComboBoxModel();
     /**
      * Creates new form InicioGUI
      */
@@ -29,33 +33,214 @@ public class InicioGUI extends javax.swing.JFrame {
 
         buttonSexo = new javax.swing.ButtonGroup();
         buttonEstadoCivil = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jCombo_TipoPersona = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel_CrearPersona = new javax.swing.JPanel();
+        jCombo_CargoPersona = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jTextF_IDPersona = new javax.swing.JTextField();
-        jTextF_NombrePersona1 = new javax.swing.JTextField();
-        jFormatT_EdadPersona = new javax.swing.JFormattedTextField();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jRadioButton_Femenino = new javax.swing.JRadioButton();
         jRadioButton_Masculino = new javax.swing.JRadioButton();
+        jTextF_SueldoPersona = new javax.swing.JTextField();
+        jFormatT_EdadPersona = new javax.swing.JFormattedTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextF_IDPersona = new javax.swing.JTextField();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jRadioButton_Femenino = new javax.swing.JRadioButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jTextF_HorarioPersona = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextF_AlturaPersona1 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jTextF_NombrePersona3 = new javax.swing.JTextField();
+        jPasswordField_PasswordPersona = new javax.swing.JPasswordField();
+        jLabel13 = new javax.swing.JLabel();
+        jCombo_TipoPersona1 = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jTextF_UsuarioPersona1 = new javax.swing.JTextField();
+        jTextF_OcupacionPersona1 = new javax.swing.JTextField();
+        jTextF_PesoPersona1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jTextF_TiempoTrabajandoPersona = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jLabel85 = new javax.swing.JLabel();
+        jPanel_CrearObjeto = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jComboBox_PersonaIngresoObjeto = new javax.swing.JComboBox<>();
+        jLabel23 = new javax.swing.JLabel();
+        jButton_ColorObjeto = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea_InstruccionObjetoHogar = new javax.swing.JTextArea();
+        jLabel25 = new javax.swing.JLabel();
+        jTextField_TallaZaptos = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jTextField_PaisElaboradoRopa = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jTextField_SizeObjeto = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jComboBox_TipoObjeto1 = new javax.swing.JComboBox<>();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jTextField_CalidadObjeto1 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea_DescripcionObjeto1 = new javax.swing.JTextArea();
+        jLabel32 = new javax.swing.JLabel();
+        jSpinner_ComodidadZapatos = new javax.swing.JSpinner();
+        jLabel33 = new javax.swing.JLabel();
+        jComboBox_TallaRopa = new javax.swing.JComboBox<>();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jTextField_MarcaObjeto1 = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        jTextField_TipoTelaRopa1 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea_DescripcionSuelaZapatos1 = new javax.swing.JTextArea();
+        jLabel39 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea_DescripcionObjetoHogar = new javax.swing.JTextArea();
+        jLabel40 = new javax.swing.JLabel();
+        jTextField_PaisElaboradoRopa1 = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jPanel_ModificarPersona = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        jComboBox_Personas = new javax.swing.JComboBox<>();
+        jLabel43 = new javax.swing.JLabel();
+        jTextF_ModificarIDPersona = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        jTextF_ModificarNombrePersona4 = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        jFormatT_ModificarEdadPersona1 = new javax.swing.JFormattedTextField();
+        jLabel46 = new javax.swing.JLabel();
+        jRadioButton_ModificarMasculino1 = new javax.swing.JRadioButton();
+        jRadioButton_ModificarFemenino1 = new javax.swing.JRadioButton();
+        jLabel47 = new javax.swing.JLabel();
+        jRadioButton_ModificarSoltero = new javax.swing.JRadioButton();
+        jRadioButton_ModificarCasado = new javax.swing.JRadioButton();
+        jTextF_ModificarAlturaPersona = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jTextF_ModifcarPesoPersona = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jTextF_ModificarUsuarioPersona = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jPasswordField_ModificarPasswordPersona = new javax.swing.JPasswordField();
+        jLabel54 = new javax.swing.JLabel();
+        jCombo_ModificarCargoPersona = new javax.swing.JComboBox<>();
+        jToggleButton_MoficarPersona = new javax.swing.JToggleButton();
+        jLabel55 = new javax.swing.JLabel();
+        jTextF_ModificarSueldoPersona = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jTextF_ModificarPesoPersona = new javax.swing.JTextField();
+        jTextF_ModificarHorarioPersona = new javax.swing.JTextField();
+        jTextF_ModifcarOcupacionPersona = new javax.swing.JTextField();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jPanel_ModificarObjeto = new javax.swing.JPanel();
+        jLabel62 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel63 = new javax.swing.JLabel();
+        jComboBox_PersonaIngresoObjeto1 = new javax.swing.JComboBox<>();
+        jLabel64 = new javax.swing.JLabel();
+        jButton_ColorObjeto1 = new javax.swing.JButton();
+        jLabel65 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea_InstruccionObjetoHogar1 = new javax.swing.JTextArea();
+        jLabel66 = new javax.swing.JLabel();
+        jTextField_TallaZaptos1 = new javax.swing.JTextField();
+        jLabel67 = new javax.swing.JLabel();
+        jTextField_PaisElaboradoRopa2 = new javax.swing.JTextField();
+        jLabel68 = new javax.swing.JLabel();
+        jTextField_SizeObjeto1 = new javax.swing.JTextField();
+        jLabel69 = new javax.swing.JLabel();
+        jComboBox_TipoObjeto2 = new javax.swing.JComboBox<>();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jTextField_CalidadObjeto2 = new javax.swing.JTextField();
+        jLabel72 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea_DescripcionObjeto2 = new javax.swing.JTextArea();
+        jLabel73 = new javax.swing.JLabel();
+        jSpinner_ComodidadZapatos1 = new javax.swing.JSpinner();
+        jLabel74 = new javax.swing.JLabel();
+        jComboBox_TallaRopa1 = new javax.swing.JComboBox<>();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
+        jTextField_MarcaObjeto2 = new javax.swing.JTextField();
+        jLabel77 = new javax.swing.JLabel();
+        jTextField_TipoTelaRopa2 = new javax.swing.JTextField();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea_DescripcionSuelaZapatos2 = new javax.swing.JTextArea();
+        jLabel80 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextArea_DescripcionObjetoHogar1 = new javax.swing.JTextArea();
+        jLabel81 = new javax.swing.JLabel();
+        jTextField_PaisElaboradoRopa3 = new javax.swing.JTextField();
+        jLabel82 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jPanel_JerarquiaPersonas = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTree_JerarquiaPersonas = new javax.swing.JTree();
+        jPanel_JerarquiaObjetos = new javax.swing.JPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTree_JerarquiaObjetos = new javax.swing.JTree();
+        jPanel_ListarPersonas = new javax.swing.JPanel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTable_ListarPersonas = new javax.swing.JTable();
+        jLabel83 = new javax.swing.JLabel();
+        jButton_EliminarListaPersona = new javax.swing.JButton();
+        jPanel_ListarObjetos = new javax.swing.JPanel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTable_ListarObjetos = new javax.swing.JTable();
+        jLabel84 = new javax.swing.JLabel();
+        jButton_EliminarListaObjeto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Ingrese los datos del tipo persona: ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 190, -1));
+        jPanel_CrearPersona.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        getContentPane().add(jCombo_TipoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 180, -1));
+        jCombo_CargoPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCombo_CargoPersonaActionPerformed(evt);
+            }
+        });
+        jPanel_CrearPersona.add(jCombo_CargoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 180, -1));
 
-        jLabel3.setText("ID:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 30, -1));
+        jLabel4.setText("Estado Civil: ");
+        jPanel_CrearPersona.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 70, -1));
 
-        jLabel4.setText("Sexo:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 60, -1));
-        getContentPane().add(jTextF_IDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 140, -1));
-        getContentPane().add(jTextF_NombrePersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 140, -1));
+        jLabel8.setText("Edad:");
+        jPanel_CrearPersona.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 60, -1));
+
+        jLabel6.setText("cms");
+        jPanel_CrearPersona.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 60, -1));
+
+        jRadioButton_Masculino.setText("M");
+        jPanel_CrearPersona.add(jRadioButton_Masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 50, -1));
+        jPanel_CrearPersona.add(jTextF_SueldoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 90, -1));
 
         jFormatT_EdadPersona.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jFormatT_EdadPersona.addActionListener(new java.awt.event.ActionListener() {
@@ -63,19 +248,593 @@ public class InicioGUI extends javax.swing.JFrame {
                 jFormatT_EdadPersonaActionPerformed(evt);
             }
         });
-        getContentPane().add(jFormatT_EdadPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 140, 30));
+        jPanel_CrearPersona.add(jFormatT_EdadPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 140, 30));
+
+        jLabel3.setText("ID:");
+        jPanel_CrearPersona.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 30, 20));
+
+        jLabel1.setText("Ingrese los datos del tipo persona: ");
+        jPanel_CrearPersona.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 190, -1));
+
+        jTextF_IDPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextF_IDPersonaActionPerformed(evt);
+            }
+        });
+        jPanel_CrearPersona.add(jTextF_IDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 140, -1));
+
+        jRadioButton2.setText("Casado");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+        jPanel_CrearPersona.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, -1, -1));
+
+        jLabel7.setText("Sexo:");
+        jPanel_CrearPersona.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 60, -1));
 
         jLabel5.setText("Nombre: ");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 60, -1));
-
-        jLabel6.setText("Edad:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 60, -1));
+        jPanel_CrearPersona.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 60, -1));
 
         jRadioButton_Femenino.setText("F");
-        getContentPane().add(jRadioButton_Femenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, -1));
+        jPanel_CrearPersona.add(jRadioButton_Femenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
 
-        jRadioButton_Masculino.setText("M");
-        getContentPane().add(jRadioButton_Masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 50, -1));
+        jRadioButton1.setText("Soltero");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        jPanel_CrearPersona.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+        jPanel_CrearPersona.add(jTextF_HorarioPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 140, -1));
+
+        jLabel9.setText("Lbs");
+        jPanel_CrearPersona.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 60, -1));
+
+        jLabel10.setText("Altura: ");
+        jPanel_CrearPersona.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 60, -1));
+        jPanel_CrearPersona.add(jTextF_AlturaPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 60, -1));
+
+        jLabel11.setText("semanas");
+        jPanel_CrearPersona.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 110, 20));
+
+        jLabel2.setText("Cargo");
+        jPanel_CrearPersona.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, -1, -1));
+
+        jLabel12.setText("Horario: ");
+        jPanel_CrearPersona.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, -1, -1));
+        jPanel_CrearPersona.add(jTextF_NombrePersona3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 140, -1));
+
+        jPasswordField_PasswordPersona.setText("jPasswordField1");
+        jPasswordField_PasswordPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField_PasswordPersonaActionPerformed(evt);
+            }
+        });
+        jPanel_CrearPersona.add(jPasswordField_PasswordPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 140, -1));
+
+        jLabel13.setText("Contraseña:");
+        jPanel_CrearPersona.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, -1, -1));
+
+        jCombo_TipoPersona1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Personal General" }));
+        jCombo_TipoPersona1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCombo_TipoPersona1ItemStateChanged(evt);
+            }
+        });
+        jCombo_TipoPersona1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCombo_TipoPersona1ActionPerformed(evt);
+            }
+        });
+        jPanel_CrearPersona.add(jCombo_TipoPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 180, -1));
+
+        jLabel14.setText("Usuario: ");
+        jPanel_CrearPersona.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, -1, -1));
+
+        jLabel15.setText("Personas Generales:");
+        jPanel_CrearPersona.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, -1, -1));
+
+        jLabel16.setText("Ocupacion: ");
+        jPanel_CrearPersona.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, -1, 20));
+        jPanel_CrearPersona.add(jTextF_UsuarioPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 140, -1));
+        jPanel_CrearPersona.add(jTextF_OcupacionPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 140, -1));
+        jPanel_CrearPersona.add(jTextF_PesoPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 60, -1));
+
+        jLabel17.setText("Peso:");
+        jPanel_CrearPersona.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 60, -1));
+
+        jLabel18.setText("Lps");
+        jPanel_CrearPersona.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, 60, -1));
+
+        jLabel19.setText("Tiempo Trabajando:");
+        jPanel_CrearPersona.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, 110, -1));
+        jPanel_CrearPersona.add(jTextF_TiempoTrabajandoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 60, -1));
+
+        jLabel20.setText("Sueldo:");
+        jPanel_CrearPersona.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 60, -1));
+
+        jToggleButton1.setText("Agregar Persona");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jPanel_CrearPersona.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, -1, -1));
+
+        jLabel85.setText("Gerente");
+        jPanel_CrearPersona.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
+
+        jTabbedPane1.addTab("Crear Persona", jPanel_CrearPersona);
+
+        jPanel_CrearObjeto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel21.setText("Descripcion: ");
+        jPanel_CrearObjeto.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 100, -1));
+
+        jLabel22.setText("Datos del Tipo Objeto: ");
+        jPanel_CrearObjeto.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jComboBox_PersonaIngresoObjeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel_CrearObjeto.add(jComboBox_PersonaIngresoObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 130, -1));
+
+        jLabel23.setText("Tipo de Objeto:");
+        jPanel_CrearObjeto.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 100, -1));
+        jPanel_CrearObjeto.add(jButton_ColorObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 50, 20));
+
+        jLabel24.setText("Descripcion Suela: ");
+        jPanel_CrearObjeto.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 130, -1));
+
+        jTextArea_InstruccionObjetoHogar.setColumns(20);
+        jTextArea_InstruccionObjetoHogar.setRows(5);
+        jScrollPane1.setViewportView(jTextArea_InstruccionObjetoHogar);
+
+        jPanel_CrearObjeto.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 200, 80));
+
+        jLabel25.setText("Color: ");
+        jPanel_CrearObjeto.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 100, -1));
+        jPanel_CrearObjeto.add(jTextField_TallaZaptos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 110, -1));
+
+        jLabel26.setText("Marca: ");
+        jPanel_CrearObjeto.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 60, -1));
+
+        jTextField_PaisElaboradoRopa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_PaisElaboradoRopaActionPerformed(evt);
+            }
+        });
+        jPanel_CrearObjeto.add(jTextField_PaisElaboradoRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 80, -1));
+
+        jLabel27.setText("Tamaño: ");
+        jPanel_CrearObjeto.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 60, -1));
+        jPanel_CrearObjeto.add(jTextField_SizeObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 110, -1));
+
+        jLabel28.setText("Calidad: ");
+        jPanel_CrearObjeto.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 60, -1));
+
+        jComboBox_TipoObjeto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel_CrearObjeto.add(jComboBox_TipoObjeto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 130, -1));
+
+        jLabel29.setText("Persona que lo ingreso: ");
+        jPanel_CrearObjeto.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 130, -1));
+
+        jLabel30.setText("Pais Elaborado");
+        jPanel_CrearObjeto.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 90, -1));
+        jPanel_CrearObjeto.add(jTextField_CalidadObjeto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 110, -1));
+
+        jLabel31.setText("Comodidad:");
+        jPanel_CrearObjeto.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 70, -1));
+
+        jTextArea_DescripcionObjeto1.setColumns(20);
+        jTextArea_DescripcionObjeto1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea_DescripcionObjeto1);
+
+        jPanel_CrearObjeto.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 240, 130));
+
+        jLabel32.setText("Talla: ");
+        jPanel_CrearObjeto.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 60, -1));
+        jPanel_CrearObjeto.add(jSpinner_ComodidadZapatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 500, 50, -1));
+
+        jLabel33.setText("Zapatos: ");
+        jPanel_CrearObjeto.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 60, -1));
+
+        jComboBox_TallaRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox_TallaRopa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_TallaRopaActionPerformed(evt);
+            }
+        });
+        jPanel_CrearObjeto.add(jComboBox_TallaRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, -1, -1));
+
+        jLabel34.setText("meses");
+        jPanel_CrearObjeto.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 110, -1));
+
+        jLabel35.setText("Talla: ");
+        jPanel_CrearObjeto.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 60, -1));
+        jPanel_CrearObjeto.add(jTextField_MarcaObjeto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 110, -1));
+
+        jLabel36.setText("Tipo de Tela: ");
+        jPanel_CrearObjeto.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 90, -1));
+        jPanel_CrearObjeto.add(jTextField_TipoTelaRopa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 110, -1));
+
+        jLabel37.setText("Ropa:");
+        jPanel_CrearObjeto.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 60, -1));
+
+        jLabel38.setText("Hogar: ");
+        jPanel_CrearObjeto.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 60, -1));
+
+        jTextArea_DescripcionSuelaZapatos1.setColumns(20);
+        jTextArea_DescripcionSuelaZapatos1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea_DescripcionSuelaZapatos1);
+
+        jPanel_CrearObjeto.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 200, 80));
+
+        jLabel39.setText("Descripcion: ");
+        jPanel_CrearObjeto.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 80, -1));
+
+        jTextArea_DescripcionObjetoHogar.setColumns(20);
+        jTextArea_DescripcionObjetoHogar.setRows(5);
+        jScrollPane4.setViewportView(jTextArea_DescripcionObjetoHogar);
+
+        jPanel_CrearObjeto.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 200, 80));
+
+        jLabel40.setText("Instrucciones: ");
+        jPanel_CrearObjeto.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 80, -1));
+
+        jTextField_PaisElaboradoRopa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_PaisElaboradoRopa1ActionPerformed(evt);
+            }
+        });
+        jPanel_CrearObjeto.add(jTextField_PaisElaboradoRopa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 110, -1));
+
+        jLabel41.setText("Tiempo Garantia:");
+        jPanel_CrearObjeto.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 110, -1));
+
+        jButton1.setText("Agregar Objeto");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel_CrearObjeto.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, -1, -1));
+
+        jTabbedPane1.addTab("Crear Objeto", jPanel_CrearObjeto);
+
+        jPanel_ModificarPersona.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel42.setText("Seleccione la persona que desea modificar: ");
+        jPanel_ModificarPersona.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 240, -1));
+
+        jComboBox_Personas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel_ModificarPersona.add(jComboBox_Personas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 420, -1));
+
+        jLabel43.setText("ID:");
+        jPanel_ModificarPersona.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 30, 20));
+
+        jTextF_ModificarIDPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextF_ModificarIDPersonaActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarPersona.add(jTextF_ModificarIDPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 140, -1));
+
+        jLabel44.setText("Nombre: ");
+        jPanel_ModificarPersona.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 60, -1));
+        jPanel_ModificarPersona.add(jTextF_ModificarNombrePersona4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 140, -1));
+
+        jLabel45.setText("Edad:");
+        jPanel_ModificarPersona.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 60, -1));
+
+        jFormatT_ModificarEdadPersona1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jFormatT_ModificarEdadPersona1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormatT_ModificarEdadPersona1ActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarPersona.add(jFormatT_ModificarEdadPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 140, 30));
+
+        jLabel46.setText("Sexo:");
+        jPanel_ModificarPersona.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 60, -1));
+
+        jRadioButton_ModificarMasculino1.setText("M");
+        jPanel_ModificarPersona.add(jRadioButton_ModificarMasculino1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 50, -1));
+
+        jRadioButton_ModificarFemenino1.setText("F");
+        jPanel_ModificarPersona.add(jRadioButton_ModificarFemenino1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
+
+        jLabel47.setText("Estado Civil: ");
+        jPanel_ModificarPersona.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 70, -1));
+
+        jRadioButton_ModificarSoltero.setText("Soltero");
+        jRadioButton_ModificarSoltero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton_ModificarSolteroActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarPersona.add(jRadioButton_ModificarSoltero, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+
+        jRadioButton_ModificarCasado.setText("Casado");
+        jRadioButton_ModificarCasado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton_ModificarCasadoActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarPersona.add(jRadioButton_ModificarCasado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, -1, -1));
+        jPanel_ModificarPersona.add(jTextF_ModificarAlturaPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 60, -1));
+
+        jLabel48.setText("Altura: ");
+        jPanel_ModificarPersona.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 60, -1));
+
+        jLabel49.setText("Peso:");
+        jPanel_ModificarPersona.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 60, -1));
+        jPanel_ModificarPersona.add(jTextF_ModifcarPesoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 60, -1));
+
+        jLabel50.setText("Lbs");
+        jPanel_ModificarPersona.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 60, -1));
+
+        jLabel51.setText("cms");
+        jPanel_ModificarPersona.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 60, -1));
+        jPanel_ModificarPersona.add(jTextF_ModificarUsuarioPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 140, -1));
+
+        jLabel52.setText("Usuario: ");
+        jPanel_ModificarPersona.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, -1, -1));
+
+        jLabel53.setText("Contraseña:");
+        jPanel_ModificarPersona.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, -1, -1));
+
+        jPasswordField_ModificarPasswordPersona.setText("jPasswordField1");
+        jPasswordField_ModificarPasswordPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField_ModificarPasswordPersonaActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarPersona.add(jPasswordField_ModificarPasswordPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 140, -1));
+
+        jLabel54.setText("Cargo");
+        jPanel_ModificarPersona.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, -1, -1));
+
+        jCombo_ModificarCargoPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCombo_ModificarCargoPersonaActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarPersona.add(jCombo_ModificarCargoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 180, -1));
+
+        jToggleButton_MoficarPersona.setText("Modifcar Persona");
+        jToggleButton_MoficarPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton_MoficarPersonaActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarPersona.add(jToggleButton_MoficarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, -1, -1));
+
+        jLabel55.setText("Sueldo:");
+        jPanel_ModificarPersona.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 60, -1));
+        jPanel_ModificarPersona.add(jTextF_ModificarSueldoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 90, -1));
+
+        jLabel56.setText("Lps");
+        jPanel_ModificarPersona.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, 60, -1));
+
+        jLabel57.setText("Tiempo Trabajando:");
+        jPanel_ModificarPersona.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, 110, -1));
+
+        jLabel58.setText("semanas");
+        jPanel_ModificarPersona.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 110, 20));
+        jPanel_ModificarPersona.add(jTextF_ModificarPesoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 60, -1));
+        jPanel_ModificarPersona.add(jTextF_ModificarHorarioPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 140, -1));
+        jPanel_ModificarPersona.add(jTextF_ModifcarOcupacionPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 140, -1));
+
+        jLabel59.setText("Ocupacion: ");
+        jPanel_ModificarPersona.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, -1, 20));
+
+        jLabel60.setText("Horario: ");
+        jPanel_ModificarPersona.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, -1, -1));
+
+        jLabel61.setText("Personas Generales:");
+        jPanel_ModificarPersona.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, -1, -1));
+
+        jTabbedPane1.addTab("Modificar Persona", jPanel_ModificarPersona);
+
+        jPanel_ModificarObjeto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel62.setText("Objeto a Modificar: ");
+        jPanel_ModificarObjeto.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 11, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel_ModificarObjeto.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 6, 167, -1));
+
+        jLabel63.setText("Descripcion: ");
+        jPanel_ModificarObjeto.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 100, -1));
+
+        jComboBox_PersonaIngresoObjeto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel_ModificarObjeto.add(jComboBox_PersonaIngresoObjeto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 130, -1));
+
+        jLabel64.setText("Tipo de Objeto:");
+        jPanel_ModificarObjeto.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 100, -1));
+        jPanel_ModificarObjeto.add(jButton_ColorObjeto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 50, 20));
+
+        jLabel65.setText("Descripcion Suela: ");
+        jPanel_ModificarObjeto.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 130, -1));
+
+        jTextArea_InstruccionObjetoHogar1.setColumns(20);
+        jTextArea_InstruccionObjetoHogar1.setRows(5);
+        jScrollPane5.setViewportView(jTextArea_InstruccionObjetoHogar1);
+
+        jPanel_ModificarObjeto.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, 200, 80));
+
+        jLabel66.setText("Color: ");
+        jPanel_ModificarObjeto.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 100, -1));
+        jPanel_ModificarObjeto.add(jTextField_TallaZaptos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 110, -1));
+
+        jLabel67.setText("Marca: ");
+        jPanel_ModificarObjeto.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 60, -1));
+
+        jTextField_PaisElaboradoRopa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_PaisElaboradoRopa2ActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarObjeto.add(jTextField_PaisElaboradoRopa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 80, -1));
+
+        jLabel68.setText("Tamaño: ");
+        jPanel_ModificarObjeto.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 60, -1));
+        jPanel_ModificarObjeto.add(jTextField_SizeObjeto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 110, -1));
+
+        jLabel69.setText("Calidad: ");
+        jPanel_ModificarObjeto.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 60, -1));
+
+        jComboBox_TipoObjeto2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel_ModificarObjeto.add(jComboBox_TipoObjeto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 130, -1));
+
+        jLabel70.setText("Persona que lo ingreso: ");
+        jPanel_ModificarObjeto.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 130, -1));
+
+        jLabel71.setText("Pais Elaborado");
+        jPanel_ModificarObjeto.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 90, -1));
+        jPanel_ModificarObjeto.add(jTextField_CalidadObjeto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 110, -1));
+
+        jLabel72.setText("Comodidad:");
+        jPanel_ModificarObjeto.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 70, -1));
+
+        jTextArea_DescripcionObjeto2.setColumns(20);
+        jTextArea_DescripcionObjeto2.setRows(5);
+        jScrollPane6.setViewportView(jTextArea_DescripcionObjeto2);
+
+        jPanel_ModificarObjeto.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 240, 130));
+
+        jLabel73.setText("Talla: ");
+        jPanel_ModificarObjeto.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 60, -1));
+        jPanel_ModificarObjeto.add(jSpinner_ComodidadZapatos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 50, -1));
+
+        jLabel74.setText("Zapatos: ");
+        jPanel_ModificarObjeto.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 60, -1));
+
+        jComboBox_TallaRopa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox_TallaRopa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_TallaRopa1ActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarObjeto.add(jComboBox_TallaRopa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, -1, -1));
+
+        jLabel75.setText("meses");
+        jPanel_ModificarObjeto.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, 110, -1));
+
+        jLabel76.setText("Talla: ");
+        jPanel_ModificarObjeto.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 60, -1));
+        jPanel_ModificarObjeto.add(jTextField_MarcaObjeto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 110, -1));
+
+        jLabel77.setText("Tipo de Tela: ");
+        jPanel_ModificarObjeto.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 90, -1));
+        jPanel_ModificarObjeto.add(jTextField_TipoTelaRopa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 110, -1));
+
+        jLabel78.setText("Ropa:");
+        jPanel_ModificarObjeto.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 60, -1));
+
+        jLabel79.setText("Hogar: ");
+        jPanel_ModificarObjeto.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 60, -1));
+
+        jTextArea_DescripcionSuelaZapatos2.setColumns(20);
+        jTextArea_DescripcionSuelaZapatos2.setRows(5);
+        jScrollPane7.setViewportView(jTextArea_DescripcionSuelaZapatos2);
+
+        jPanel_ModificarObjeto.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 480, 200, 80));
+
+        jLabel80.setText("Descripcion: ");
+        jPanel_ModificarObjeto.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 80, -1));
+
+        jTextArea_DescripcionObjetoHogar1.setColumns(20);
+        jTextArea_DescripcionObjetoHogar1.setRows(5);
+        jScrollPane8.setViewportView(jTextArea_DescripcionObjetoHogar1);
+
+        jPanel_ModificarObjeto.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 200, 80));
+
+        jLabel81.setText("Instrucciones: ");
+        jPanel_ModificarObjeto.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 80, -1));
+
+        jTextField_PaisElaboradoRopa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_PaisElaboradoRopa3ActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarObjeto.add(jTextField_PaisElaboradoRopa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 110, -1));
+
+        jLabel82.setText("Tiempo Garantia:");
+        jPanel_ModificarObjeto.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 110, -1));
+
+        jButton2.setText("Agregar Objeto");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel_ModificarObjeto.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, -1, -1));
+
+        jTabbedPane1.addTab("Modificar Objeto", jPanel_ModificarObjeto);
+
+        jPanel_JerarquiaPersonas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane9.setViewportView(jTree_JerarquiaPersonas);
+
+        jPanel_JerarquiaPersonas.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 760, 550));
+
+        jTabbedPane1.addTab("Jerarquia de Personas", jPanel_JerarquiaPersonas);
+
+        jPanel_JerarquiaObjetos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane10.setViewportView(jTree_JerarquiaObjetos);
+
+        jPanel_JerarquiaObjetos.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 770, 560));
+
+        jTabbedPane1.addTab("Jerarquia de Objetos", jPanel_JerarquiaObjetos);
+
+        jPanel_ListarPersonas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable_ListarPersonas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Rol"
+            }
+        ));
+        jScrollPane11.setViewportView(jTable_ListarPersonas);
+
+        jPanel_ListarPersonas.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 24, 705, 331));
+
+        jLabel83.setText("Seleccion el elemento de la lista a eliminar");
+        jPanel_ListarPersonas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 373, 254, -1));
+
+        jButton_EliminarListaPersona.setText("Eliminar");
+        jPanel_ListarPersonas.add(jButton_EliminarListaPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 407, 98, -1));
+
+        jTabbedPane1.addTab("Lista Personas", jPanel_ListarPersonas);
+
+        jPanel_ListarObjetos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable_ListarObjetos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Color", "Marca", "Persona que lo ingreso"
+            }
+        ));
+        jScrollPane12.setViewportView(jTable_ListarObjetos);
+
+        jPanel_ListarObjetos.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 24, 705, 331));
+
+        jLabel84.setText("Seleccion el elemento de la lista a eliminar");
+        jPanel_ListarObjetos.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 373, 254, -1));
+
+        jButton_EliminarListaObjeto.setText("Eliminar");
+        jPanel_ListarObjetos.add(jButton_EliminarListaObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 407, 98, -1));
+
+        jTabbedPane1.addTab("Lista Objetos", jPanel_ListarObjetos);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -83,6 +842,110 @@ public class InicioGUI extends javax.swing.JFrame {
     private void jFormatT_EdadPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormatT_EdadPersonaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormatT_EdadPersonaActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jCombo_CargoPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCombo_CargoPersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCombo_CargoPersonaActionPerformed
+
+    private void jTextF_IDPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextF_IDPersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextF_IDPersonaActionPerformed
+
+    private void jPasswordField_PasswordPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField_PasswordPersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField_PasswordPersonaActionPerformed
+
+    private void jCombo_TipoPersona1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCombo_TipoPersona1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCombo_TipoPersona1ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jComboBox_TallaRopaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_TallaRopaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox_TallaRopaActionPerformed
+
+    private void jTextField_PaisElaboradoRopaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_PaisElaboradoRopaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_PaisElaboradoRopaActionPerformed
+
+    private void jTextField_PaisElaboradoRopa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_PaisElaboradoRopa1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_PaisElaboradoRopa1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextF_ModificarIDPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextF_ModificarIDPersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextF_ModificarIDPersonaActionPerformed
+
+    private void jFormatT_ModificarEdadPersona1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormatT_ModificarEdadPersona1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormatT_ModificarEdadPersona1ActionPerformed
+
+    private void jRadioButton_ModificarSolteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_ModificarSolteroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton_ModificarSolteroActionPerformed
+
+    private void jRadioButton_ModificarCasadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_ModificarCasadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton_ModificarCasadoActionPerformed
+
+    private void jPasswordField_ModificarPasswordPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField_ModificarPasswordPersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField_ModificarPasswordPersonaActionPerformed
+
+    private void jCombo_ModificarCargoPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCombo_ModificarCargoPersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCombo_ModificarCargoPersonaActionPerformed
+
+    private void jToggleButton_MoficarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton_MoficarPersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton_MoficarPersonaActionPerformed
+
+    private void jTextField_PaisElaboradoRopa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_PaisElaboradoRopa2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_PaisElaboradoRopa2ActionPerformed
+
+    private void jComboBox_TallaRopa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_TallaRopa1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox_TallaRopa1ActionPerformed
+
+    private void jTextField_PaisElaboradoRopa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_PaisElaboradoRopa3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_PaisElaboradoRopa3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jCombo_TipoPersona1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCombo_TipoPersona1ItemStateChanged
+        //Lockear algunas opciones
+        try {
+            //Si es de tipo Gerente bloqueamos la otra opcion
+            if (jCombo_TipoPersona1.getSelectedIndex() == 0) {
+                
+                jTextF_OcupacionPersona1.setEnabled(false);
+                jTextF_HorarioPersona.setEnabled(false);
+                jTextF_TiempoTrabajandoPersona.setEnabled(false);
+                jTextF_SueldoPersona.setEnabled(false);
+                        
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jCombo_TipoPersona1ItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -122,16 +985,188 @@ public class InicioGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonEstadoCivil;
     private javax.swing.ButtonGroup buttonSexo;
-    private javax.swing.JComboBox<String> jCombo_TipoPersona;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton_ColorObjeto;
+    private javax.swing.JButton jButton_ColorObjeto1;
+    private javax.swing.JButton jButton_EliminarListaObjeto;
+    private javax.swing.JButton jButton_EliminarListaPersona;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox_PersonaIngresoObjeto;
+    private javax.swing.JComboBox<String> jComboBox_PersonaIngresoObjeto1;
+    private javax.swing.JComboBox<String> jComboBox_Personas;
+    private javax.swing.JComboBox<String> jComboBox_TallaRopa;
+    private javax.swing.JComboBox<String> jComboBox_TallaRopa1;
+    private javax.swing.JComboBox<String> jComboBox_TipoObjeto1;
+    private javax.swing.JComboBox<String> jComboBox_TipoObjeto2;
+    private javax.swing.JComboBox<String> jCombo_CargoPersona;
+    private javax.swing.JComboBox<String> jCombo_ModificarCargoPersona;
+    private javax.swing.JComboBox<String> jCombo_TipoPersona1;
     private javax.swing.JFormattedTextField jFormatT_EdadPersona;
+    private javax.swing.JFormattedTextField jFormatT_ModificarEdadPersona1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel_CrearObjeto;
+    private javax.swing.JPanel jPanel_CrearPersona;
+    private javax.swing.JPanel jPanel_JerarquiaObjetos;
+    private javax.swing.JPanel jPanel_JerarquiaPersonas;
+    private javax.swing.JPanel jPanel_ListarObjetos;
+    private javax.swing.JPanel jPanel_ListarPersonas;
+    private javax.swing.JPanel jPanel_ModificarObjeto;
+    private javax.swing.JPanel jPanel_ModificarPersona;
+    private javax.swing.JPasswordField jPasswordField_ModificarPasswordPersona;
+    private javax.swing.JPasswordField jPasswordField_PasswordPersona;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton_Femenino;
     private javax.swing.JRadioButton jRadioButton_Masculino;
+    private javax.swing.JRadioButton jRadioButton_ModificarCasado;
+    private javax.swing.JRadioButton jRadioButton_ModificarFemenino1;
+    private javax.swing.JRadioButton jRadioButton_ModificarMasculino1;
+    private javax.swing.JRadioButton jRadioButton_ModificarSoltero;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JSpinner jSpinner_ComodidadZapatos;
+    private javax.swing.JSpinner jSpinner_ComodidadZapatos1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable_ListarObjetos;
+    private javax.swing.JTable jTable_ListarPersonas;
+    private javax.swing.JTextArea jTextArea_DescripcionObjeto1;
+    private javax.swing.JTextArea jTextArea_DescripcionObjeto2;
+    private javax.swing.JTextArea jTextArea_DescripcionObjetoHogar;
+    private javax.swing.JTextArea jTextArea_DescripcionObjetoHogar1;
+    private javax.swing.JTextArea jTextArea_DescripcionSuelaZapatos1;
+    private javax.swing.JTextArea jTextArea_DescripcionSuelaZapatos2;
+    private javax.swing.JTextArea jTextArea_InstruccionObjetoHogar;
+    private javax.swing.JTextArea jTextArea_InstruccionObjetoHogar1;
+    private javax.swing.JTextField jTextF_AlturaPersona1;
+    private javax.swing.JTextField jTextF_HorarioPersona;
     private javax.swing.JTextField jTextF_IDPersona;
-    private javax.swing.JTextField jTextF_NombrePersona1;
+    private javax.swing.JTextField jTextF_ModifcarOcupacionPersona;
+    private javax.swing.JTextField jTextF_ModifcarPesoPersona;
+    private javax.swing.JTextField jTextF_ModificarAlturaPersona;
+    private javax.swing.JTextField jTextF_ModificarHorarioPersona;
+    private javax.swing.JTextField jTextF_ModificarIDPersona;
+    private javax.swing.JTextField jTextF_ModificarNombrePersona4;
+    private javax.swing.JTextField jTextF_ModificarPesoPersona;
+    private javax.swing.JTextField jTextF_ModificarSueldoPersona;
+    private javax.swing.JTextField jTextF_ModificarUsuarioPersona;
+    private javax.swing.JTextField jTextF_NombrePersona3;
+    private javax.swing.JTextField jTextF_OcupacionPersona1;
+    private javax.swing.JTextField jTextF_PesoPersona1;
+    private javax.swing.JTextField jTextF_SueldoPersona;
+    private javax.swing.JTextField jTextF_TiempoTrabajandoPersona;
+    private javax.swing.JTextField jTextF_UsuarioPersona1;
+    private javax.swing.JTextField jTextField_CalidadObjeto1;
+    private javax.swing.JTextField jTextField_CalidadObjeto2;
+    private javax.swing.JTextField jTextField_MarcaObjeto1;
+    private javax.swing.JTextField jTextField_MarcaObjeto2;
+    private javax.swing.JTextField jTextField_PaisElaboradoRopa;
+    private javax.swing.JTextField jTextField_PaisElaboradoRopa1;
+    private javax.swing.JTextField jTextField_PaisElaboradoRopa2;
+    private javax.swing.JTextField jTextField_PaisElaboradoRopa3;
+    private javax.swing.JTextField jTextField_SizeObjeto;
+    private javax.swing.JTextField jTextField_SizeObjeto1;
+    private javax.swing.JTextField jTextField_TallaZaptos;
+    private javax.swing.JTextField jTextField_TallaZaptos1;
+    private javax.swing.JTextField jTextField_TipoTelaRopa1;
+    private javax.swing.JTextField jTextField_TipoTelaRopa2;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton_MoficarPersona;
+    private javax.swing.JTree jTree_JerarquiaObjetos;
+    private javax.swing.JTree jTree_JerarquiaPersonas;
     // End of variables declaration//GEN-END:variables
 }
