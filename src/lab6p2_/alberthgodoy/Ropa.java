@@ -8,25 +8,25 @@ import java.awt.Color;
  * @author godoy
  */
 public class Ropa extends Objetos{
-    private int talla;
+    private String talla;
     private String tipoTela;
     private String paisElaborado;
 
     public Ropa() {
     }
 
-    public Ropa(int talla, String tipoTela, String paisElaborado, Color color, String descripcion, String marca, int size, String calidad, Personas persona) {
+    public Ropa(String talla, String tipoTela, String paisElaborado, Color color, String descripcion, String marca, int size, String calidad, Personas persona) {
         super(color, descripcion, marca, size, calidad, persona);
         this.talla = talla;
         this.tipoTela = tipoTela;
         this.paisElaborado = paisElaborado;
     }
 
-    public int getTalla() {
+    public String getTalla() {
         return talla;
     }
 
-    public void setTalla(int talla) {
+    public void setTalla(String talla) {
         this.talla = talla;
     }
 

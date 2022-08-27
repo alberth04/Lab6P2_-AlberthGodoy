@@ -10,6 +10,9 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 
 /**
  *
@@ -19,12 +22,37 @@ public class InicioGUI extends javax.swing.JFrame {
 
     DefaultComboBoxModel listaPersonas = new DefaultComboBoxModel();
     DefaultComboBoxModel listaObjetos = new DefaultComboBoxModel();
+    Personas persona;
+    Objetos objetos;
+    DefaultTreeModel raizPersona = new DefaultTreeModel((TreeNode) persona);
+    DefaultTreeModel raizObjeto = new DefaultTreeModel((TreeNode) objetos);
 
     /**
      * Creates new form InicioGUI
      */
     public InicioGUI() {
         initComponents();
+        //Colocamos la raiz
+        DefaultMutableTreeNode rootPersona = new DefaultMutableTreeNode("Personal");
+        raizPersona.setRoot(rootPersona);
+        //Agregamos hijos
+        DefaultMutableTreeNode gerente = new DefaultMutableTreeNode("Gerente");
+        rootPersona.add(gerente);
+        DefaultMutableTreeNode personalGerente = new DefaultMutableTreeNode("Personal Gerente");
+        rootPersona.add(personalGerente);
+        DefaultMutableTreeNode gerentedePlanta = new DefaultMutableTreeNode("Gerente de Planta");
+        personalGerente.add(gerentedePlanta);
+        DefaultMutableTreeNode gerenteSucursal = new DefaultMutableTreeNode("Gerente de Sucursal");
+        personalGerente.add(gerenteSucursal);
+        //Colocar raiz en el objeto
+        DefaultMutableTreeNode rootObjeto = new DefaultMutableTreeNode("Objetos en Inventario");
+        raizObjeto.setRoot(rootObjeto);
+        DefaultMutableTreeNode Zapatos = new DefaultMutableTreeNode("Zapatos");
+        rootObjeto.add(Zapatos);
+        DefaultMutableTreeNode ropa = new DefaultMutableTreeNode("Ropa");
+        rootObjeto.add(ropa);
+        DefaultMutableTreeNode objetoHogar = new DefaultMutableTreeNode("Objeto Hogar");
+        rootObjeto.add(objetoHogar);
     }
 
     /**
@@ -91,7 +119,7 @@ public class InicioGUI extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jTextField_TallaZaptos = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        jTextField_PaisElaboradoRopa = new javax.swing.JTextField();
+        jTextField_TiempoGarantia = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jTextField_SizeObjeto = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
@@ -419,12 +447,12 @@ public class InicioGUI extends javax.swing.JFrame {
         jLabel26.setText("Marca: ");
         jPanel_CrearObjeto.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 60, -1));
 
-        jTextField_PaisElaboradoRopa.addActionListener(new java.awt.event.ActionListener() {
+        jTextField_TiempoGarantia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_PaisElaboradoRopaActionPerformed(evt);
+                jTextField_TiempoGarantiaActionPerformed(evt);
             }
         });
-        jPanel_CrearObjeto.add(jTextField_PaisElaboradoRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 80, -1));
+        jPanel_CrearObjeto.add(jTextField_TiempoGarantia, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 80, -1));
 
         jLabel27.setText("Tamaño: ");
         jPanel_CrearObjeto.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 60, -1));
@@ -808,6 +836,7 @@ public class InicioGUI extends javax.swing.JFrame {
 
         jPanel_JerarquiaPersonas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTree_JerarquiaPersonas.setModel(raizPersona);
         jScrollPane9.setViewportView(jTree_JerarquiaPersonas);
 
         jPanel_JerarquiaPersonas.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 760, 550));
@@ -816,6 +845,7 @@ public class InicioGUI extends javax.swing.JFrame {
 
         jPanel_JerarquiaObjetos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTree_JerarquiaObjetos.setModel(raizObjeto);
         jScrollPane10.setViewportView(jTree_JerarquiaObjetos);
 
         jPanel_JerarquiaObjetos.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 770, 560));
@@ -836,7 +866,7 @@ public class InicioGUI extends javax.swing.JFrame {
 
         jPanel_ListarPersonas.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 24, 705, 331));
 
-        jLabel83.setText("Seleccion el elemento de la lista a eliminar");
+        jLabel83.setText("Seleccion en el nombre del elemento par eliminar");
         jPanel_ListarPersonas.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 373, 254, -1));
 
         jButton_EliminarListaPersona.setText("Eliminar");
@@ -863,10 +893,15 @@ public class InicioGUI extends javax.swing.JFrame {
 
         jPanel_ListarObjetos.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 24, 705, 331));
 
-        jLabel84.setText("Seleccion el elemento de la lista a eliminar");
+        jLabel84.setText("Seleccionar la Marca del elemento para eliminar");
         jPanel_ListarObjetos.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 373, 254, -1));
 
         jButton_EliminarListaObjeto.setText("Eliminar");
+        jButton_EliminarListaObjeto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_EliminarListaObjetoMouseClicked(evt);
+            }
+        });
         jPanel_ListarObjetos.add(jButton_EliminarListaObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 407, 98, -1));
 
         jTabbedPane1.addTab("Lista Objetos", jPanel_ListarObjetos);
@@ -912,9 +947,9 @@ public class InicioGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox_TallaRopaActionPerformed
 
-    private void jTextField_PaisElaboradoRopaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_PaisElaboradoRopaActionPerformed
+    private void jTextField_TiempoGarantiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_TiempoGarantiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_PaisElaboradoRopaActionPerformed
+    }//GEN-LAST:event_jTextField_TiempoGarantiaActionPerformed
 
     private void jTextField_PaisElaboradoRopa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_PaisElaboradoRopa1ActionPerformed
         // TODO add your handling code here:
@@ -1052,6 +1087,8 @@ public class InicioGUI extends javax.swing.JFrame {
                         = (DefaultTableModel) jTable_ListarPersonas.getModel();
                 tablemodel.addRow(newRow);
                 jTable_ListarPersonas.setModel(tablemodel);
+                //Agregar en arboles
+
             } else {
                 //Personas General
                 String ocupacion = jTextF_OcupacionPersona1.getText();
@@ -1088,7 +1125,6 @@ public class InicioGUI extends javax.swing.JFrame {
             int persona = jTable_ListarPersonas.getSelectedRow();
             //Eliminar en el ComboBox
 
-            JOptionPane.showMessageDialog(this, tablemodel.getValueAt(jTable_ListarPersonas.getSelectedRow(), jTable_ListarPersonas.getSelectedColumn()).toString());
             for (int i = 0; i < listaPersonas.getSize(); i++) {
                 if (tablemodel.getValueAt(jTable_ListarPersonas.getSelectedRow(), jTable_ListarPersonas.getSelectedColumn()).toString().equals(
                         ((Personas) listaPersonas.getElementAt(i)).getNombrel())) {
@@ -1125,8 +1161,57 @@ public class InicioGUI extends javax.swing.JFrame {
                 int comodidad = (int) jSpinner_ComodidadZapatos.getValue();
                 //Agregar Objeto
                 listaObjetos.addElement(new Zapatos(talla, descripcionSuela, comodidad, color, descripcionObjeto, marca, size, calidad, persona));
+                JOptionPane.showMessageDialog(jPanel_CrearObjeto, "Zapatos Agregados");
                 //Listar Objeto
-                
+                int indexPersona = listaObjetos.getSize() - 1;
+                Zapatos objeto = (Zapatos) listaObjetos.getElementAt(indexPersona);
+                Object[] newRow = {
+                    objeto.getColor(),
+                    objeto.getMarca(),
+                    objeto.getPersona()
+                };
+                DefaultTableModel tablemodel
+                        = (DefaultTableModel) jTable_ListarObjetos.getModel();
+                tablemodel.addRow(newRow);
+                jTable_ListarObjetos.setModel(tablemodel);
+                //Ropa
+            } else if (jComboBox_TipoObjeto1.getSelectedIndex() == 1) {
+                String talla = jComboBox_TallaRopa.getSelectedItem().toString();
+                String tipoTela = jTextField_TipoTelaRopa1.getText();
+                String paisElaborado = jTextField_PaisElaboradoRopa1.getText();
+                listaObjetos.addElement(new Ropa(talla, tipoTela, paisElaborado, color, descripcionObjeto, marca, size, calidad, persona));
+                JOptionPane.showMessageDialog(jPanel_CrearObjeto, "Ropa Agregados");
+                //Listar Objeto
+                int indexPersona = listaObjetos.getSize() - 1;
+                Ropa objeto = (Ropa) listaObjetos.getElementAt(indexPersona);
+                Object[] newRow = {
+                    objeto.getColor(),
+                    objeto.getMarca(),
+                    objeto.getPersona()
+                };
+                DefaultTableModel tablemodel
+                        = (DefaultTableModel) jTable_ListarObjetos.getModel();
+                tablemodel.addRow(newRow);
+                jTable_ListarObjetos.setModel(tablemodel);
+                //Objeto Hogar
+            } else {
+                String descripcionHogar = jTextArea_DescripcionObjetoHogar.getText();
+                String instruccionHogar = jTextArea_InstruccionObjetoHogar.getText();
+                String tiempoGarantia = jTextField_TiempoGarantia.getText();
+                listaObjetos.addElement(new ObjetosHogar(descripcionHogar, instruccionHogar, tiempoGarantia, color, descripcionHogar, marca, size, calidad, persona));
+                JOptionPane.showMessageDialog(jPanel_CrearObjeto, "Objeto Hogar Agregados");
+                //Listar
+                int indexPersona = listaObjetos.getSize() - 1;
+                ObjetosHogar objeto = (ObjetosHogar) listaObjetos.getElementAt(indexPersona);
+                Object[] newRow = {
+                    objeto.getColor(),
+                    objeto.getMarca(),
+                    objeto.getPersona()
+                };
+                DefaultTableModel tablemodel
+                        = (DefaultTableModel) jTable_ListarObjetos.getModel();
+                tablemodel.addRow(newRow);
+                jTable_ListarObjetos.setModel(tablemodel);
             }
         } catch (Exception e) {
         }
@@ -1149,7 +1234,7 @@ public class InicioGUI extends javax.swing.JFrame {
                     //Hogar
                     jTextArea_DescripcionObjetoHogar.setEnabled(false);
                     jTextArea_InstruccionObjetoHogar.setEnabled(false);
-                    jTextField_PaisElaboradoRopa.setEnabled(false);
+                    jTextField_TiempoGarantia.setEnabled(false);
                 }
                 case 1 -> {
                     //Zapatos
@@ -1163,7 +1248,7 @@ public class InicioGUI extends javax.swing.JFrame {
                     //Hogar
                     jTextArea_DescripcionObjetoHogar.setEnabled(false);
                     jTextArea_InstruccionObjetoHogar.setEnabled(false);
-                    jTextField_PaisElaboradoRopa.setEnabled(false);
+                    jTextField_TiempoGarantia.setEnabled(false);
                 }
                 default -> {
                     //Zapatos
@@ -1177,12 +1262,36 @@ public class InicioGUI extends javax.swing.JFrame {
                     //Hogar
                     jTextArea_DescripcionObjetoHogar.setEnabled(true);
                     jTextArea_InstruccionObjetoHogar.setEnabled(true);
-                    jTextField_PaisElaboradoRopa.setEnabled(true);
+                    jTextField_TiempoGarantia.setEnabled(true);
                 }
             }
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jComboBox_TipoObjeto1ItemStateChanged
+
+    private void jButton_EliminarListaObjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_EliminarListaObjetoMouseClicked
+        //Eliminar la persona
+        if (jTable_ListarObjetos.getSelectedRow() >= 0) {
+
+            DefaultTableModel tablemodel
+                    = (DefaultTableModel) jTable_ListarObjetos.getModel();
+            int objeto = jTable_ListarObjetos.getSelectedRow();
+            //Eliminar en el ComboBox
+
+            for (int i = 0; i < listaObjetos.getSize(); i++) {
+                if (tablemodel.getValueAt(jTable_ListarObjetos.getSelectedRow(), jTable_ListarObjetos.getSelectedColumn()).toString().equals(
+                        ((Objetos) listaObjetos.getElementAt(i)).getMarca())) {
+                    listaObjetos.removeElement(i);
+                    JOptionPane.showMessageDialog(jPanel_ListarObjetos, "Eliminada objeto de la lista");
+                }
+            }
+
+            //Eliminar del jTable
+            tablemodel.removeRow(objeto);
+            jTable_ListarPersonas.setModel(tablemodel);
+
+        }
+    }//GEN-LAST:event_jButton_EliminarListaObjetoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1391,7 +1500,6 @@ public class InicioGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_CalidadObjeto2;
     private javax.swing.JTextField jTextField_MarcaObjeto1;
     private javax.swing.JTextField jTextField_MarcaObjeto2;
-    private javax.swing.JTextField jTextField_PaisElaboradoRopa;
     private javax.swing.JTextField jTextField_PaisElaboradoRopa1;
     private javax.swing.JTextField jTextField_PaisElaboradoRopa2;
     private javax.swing.JTextField jTextField_PaisElaboradoRopa3;
@@ -1399,6 +1507,7 @@ public class InicioGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_SizeObjeto1;
     private javax.swing.JTextField jTextField_TallaZaptos;
     private javax.swing.JTextField jTextField_TallaZaptos1;
+    private javax.swing.JTextField jTextField_TiempoGarantia;
     private javax.swing.JTextField jTextField_TipoTelaRopa1;
     private javax.swing.JTextField jTextField_TipoTelaRopa2;
     private javax.swing.JToggleButton jToggleButton1;
