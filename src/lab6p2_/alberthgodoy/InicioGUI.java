@@ -41,9 +41,9 @@ public class InicioGUI extends javax.swing.JFrame {
         DefaultMutableTreeNode personalGerente = new DefaultMutableTreeNode("Personal Gerente");
         rootPersona.add(personalGerente);
         DefaultMutableTreeNode gerentedePlanta = new DefaultMutableTreeNode("Gerente de Planta");
-        personalGerente.add(gerentedePlanta);
+        gerente.add(gerentedePlanta);
         DefaultMutableTreeNode gerenteSucursal = new DefaultMutableTreeNode("Gerente de Sucursal");
-        personalGerente.add(gerenteSucursal);
+        gerente.add(gerenteSucursal);
         //Colocar raiz en el objeto
         DefaultMutableTreeNode rootObjeto = new DefaultMutableTreeNode("Objetos en Inventario");
         raizObjeto.setRoot(rootObjeto);
@@ -1088,7 +1088,23 @@ public class InicioGUI extends javax.swing.JFrame {
                 tablemodel.addRow(newRow);
                 jTable_ListarPersonas.setModel(tablemodel);
                 //Agregar en arboles
-
+                DefaultTreeModel treePersonas
+                         = (DefaultTreeModel) jTree_JerarquiaPersonas.getModel();
+                
+                //Obtener Raiz
+                
+                DefaultMutableTreeNode root 
+                        = (DefaultMutableTreeNode) treePersonas.getRoot();
+                //Agregar Gerente
+                for (int i = 0; i < root.getChildCount(); i++) {
+                    //Agregar Gerentes
+                    if (root.getChildAt(i).getChildCount() >= 0) {
+                        for (int j = 0; j < 10; j++) {
+                            
+                        }
+                    }
+                }
+                
             } else {
                 //Personas General
                 String ocupacion = jTextF_OcupacionPersona1.getText();
