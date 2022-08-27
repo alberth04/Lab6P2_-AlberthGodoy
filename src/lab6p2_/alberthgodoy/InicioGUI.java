@@ -38,7 +38,7 @@ public class InicioGUI extends javax.swing.JFrame {
         //Agregamos hijos
         DefaultMutableTreeNode gerente = new DefaultMutableTreeNode("Gerente");
         rootPersona.add(gerente);
-        DefaultMutableTreeNode personalGerente = new DefaultMutableTreeNode("Personal Gerente");
+        DefaultMutableTreeNode personalGerente = new DefaultMutableTreeNode("Personal General");
         rootPersona.add(personalGerente);
         DefaultMutableTreeNode gerentedePlanta = new DefaultMutableTreeNode("Gerente de Planta");
         gerente.add(gerentedePlanta);
@@ -1089,22 +1089,26 @@ public class InicioGUI extends javax.swing.JFrame {
                 jTable_ListarPersonas.setModel(tablemodel);
                 //Agregar en arboles
                 DefaultTreeModel treePersonas
-                         = (DefaultTreeModel) jTree_JerarquiaPersonas.getModel();
-                
+                        = (DefaultTreeModel) jTree_JerarquiaPersonas.getModel();
+                JOptionPane.showMessageDialog(this, jCombo_TipoPersona1.getSelectedItem().toString());
                 //Obtener Raiz
-                
-                DefaultMutableTreeNode root 
+                DefaultMutableTreeNode root
                         = (DefaultMutableTreeNode) treePersonas.getRoot();
                 //Agregar Gerente
                 for (int i = 0; i < root.getChildCount(); i++) {
                     //Agregar Gerentes
                     if (root.getChildAt(i).getChildCount() >= 0) {
-                        for (int j = 0; j < 10; j++) {
-                            
+                        for (int j = 0; j < root.getChildAt(i).getChildCount(); j++) {
+                            if (root.getChildAt(i).getChildAt(j).toString().equalsIgnoreCase("Gerente de Planta")
+                                    && persona.getCargo().equalsIgnoreCase("Gerente de Planta")) {
+                                DefaultMutableTreeNode nombreGerente
+                                        = new DefaultMutableTreeNode(persona.getNombrel());
+                                ((DefaultMutableTreeNode) root.getChildAt(i)).add(nombreGerente);
+                            }
                         }
                     }
                 }
-                
+
             } else {
                 //Personas General
                 String ocupacion = jTextF_OcupacionPersona1.getText();
@@ -1125,6 +1129,22 @@ public class InicioGUI extends javax.swing.JFrame {
                         = (DefaultTableModel) jTable_ListarPersonas.getModel();
                 tablemodel.addRow(newRow);
                 jTable_ListarPersonas.setModel(tablemodel);
+                //Arbol
+                //Agregar en arboles
+                DefaultTreeModel treePersonas
+                        = (DefaultTreeModel) jTree_JerarquiaPersonas.getModel();
+                //Obtener Raiz
+                DefaultMutableTreeNode root
+                        = (DefaultMutableTreeNode) treePersonas.getRoot();
+                //Agregar Personal
+                for (int i = 0; i < root.getChildCount(); i++) {
+                    //Agregar Gerentes
+                    if (root.getChildAt(i).toString().equalsIgnoreCase("Personal General")) {
+                        DefaultMutableTreeNode personalGeneral 
+                                = new DefaultMutableTreeNode(persona.getNombrel());
+                        ((DefaultMutableTreeNode)root.getChildAt(i)).add(personalGeneral);
+                    }
+                }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(jPanel_CrearPersona, "No se agrego la persona");
