@@ -1103,7 +1103,13 @@ public class InicioGUI extends javax.swing.JFrame {
                                     && persona.getCargo().equalsIgnoreCase("Gerente de Planta")) {
                                 DefaultMutableTreeNode nombreGerente
                                         = new DefaultMutableTreeNode(persona.getNombrel());
-                                ((DefaultMutableTreeNode) root.getChildAt(i)).add(nombreGerente);
+                                ((DefaultMutableTreeNode) root.getChildAt(i).getChildAt(j)).add(nombreGerente);
+                            }
+                            if (root.getChildAt(i).getChildAt(j).toString().equalsIgnoreCase("Gerente de Sucursal")
+                                    && persona.getCargo().equalsIgnoreCase("Gerente Sucursal")) {
+                                DefaultMutableTreeNode nombreGerente
+                                        = new DefaultMutableTreeNode(persona.getNombrel());
+                                ((DefaultMutableTreeNode) root.getChildAt(i).getChildAt(j)).add(nombreGerente);
                             }
                         }
                     }
@@ -1210,6 +1216,21 @@ public class InicioGUI extends javax.swing.JFrame {
                         = (DefaultTableModel) jTable_ListarObjetos.getModel();
                 tablemodel.addRow(newRow);
                 jTable_ListarObjetos.setModel(tablemodel);
+                //Agregar en arboles
+                DefaultTreeModel treeObjeto
+                        = (DefaultTreeModel) jTree_JerarquiaObjetos.getModel();
+                //Obtener Raiz
+                DefaultMutableTreeNode root
+                        = (DefaultMutableTreeNode) treeObjeto.getRoot();
+                //Agregar Personal
+                for (int i = 0; i < root.getChildCount(); i++) {
+                    //Agregar Zapatos
+                    if (root.getChildAt(i).toString().equalsIgnoreCase("Zapatos")) {
+                        DefaultMutableTreeNode objetos2
+                                = new DefaultMutableTreeNode(objeto.getMarca());
+                        ((DefaultMutableTreeNode)root.getChildAt(i)).add(objetos2);
+                    }
+                }
                 //Ropa
             } else if (jComboBox_TipoObjeto1.getSelectedIndex() == 1) {
                 String talla = jComboBox_TallaRopa.getSelectedItem().toString();
@@ -1229,6 +1250,21 @@ public class InicioGUI extends javax.swing.JFrame {
                         = (DefaultTableModel) jTable_ListarObjetos.getModel();
                 tablemodel.addRow(newRow);
                 jTable_ListarObjetos.setModel(tablemodel);
+                //Agregar en arboles
+                DefaultTreeModel treeObjeto
+                        = (DefaultTreeModel) jTree_JerarquiaObjetos.getModel();
+                //Obtener Raiz
+                DefaultMutableTreeNode root
+                        = (DefaultMutableTreeNode) treeObjeto.getRoot();
+                //Agregar Personal
+                for (int i = 0; i < root.getChildCount(); i++) {
+                    //Agregar Zapatos
+                    if (root.getChildAt(i).toString().equalsIgnoreCase("Ropa")) {
+                        DefaultMutableTreeNode objetos2
+                                = new DefaultMutableTreeNode(objeto.getMarca());
+                        ((DefaultMutableTreeNode)root.getChildAt(i)).add(objetos2);
+                    }
+                }
                 //Objeto Hogar
             } else {
                 String descripcionHogar = jTextArea_DescripcionObjetoHogar.getText();
@@ -1248,6 +1284,21 @@ public class InicioGUI extends javax.swing.JFrame {
                         = (DefaultTableModel) jTable_ListarObjetos.getModel();
                 tablemodel.addRow(newRow);
                 jTable_ListarObjetos.setModel(tablemodel);
+                //Agregar en arboles
+                DefaultTreeModel treeObjeto
+                        = (DefaultTreeModel) jTree_JerarquiaObjetos.getModel();
+                //Obtener Raiz
+                DefaultMutableTreeNode root
+                        = (DefaultMutableTreeNode) treeObjeto.getRoot();
+                //Agregar Personal
+                for (int i = 0; i < root.getChildCount(); i++) {
+                    //Agregar Zapatos
+                    if (root.getChildAt(i).toString().equalsIgnoreCase("Objeto Hogar")) {
+                        DefaultMutableTreeNode objetos2
+                                = new DefaultMutableTreeNode(objeto.getMarca());
+                        ((DefaultMutableTreeNode)root.getChildAt(i)).add(objetos2);
+                    }
+                }
             }
         } catch (Exception e) {
         }
