@@ -13,7 +13,7 @@ public class Gerente extends Personas{
     public Gerente() {
     }
 
-    public Gerente(String usuario, String password, String cargo, String iD, String nombrel, int edad, String sexo, String estadoCivil, double peso, double altura) {
+    public Gerente(String usuario, String password, String cargo, String iD, String nombrel, int edad, String sexo, String estadoCivil, double peso, double altura) throws Exception {
         super(iD, nombrel, edad, sexo, estadoCivil, peso, altura);
         this.usuario = usuario;
         this.password = password;

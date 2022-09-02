@@ -1,4 +1,3 @@
-
 package lab6p2_.alberthgodoy;
 
 /**
@@ -6,6 +5,7 @@ package lab6p2_.alberthgodoy;
  * @author godoy
  */
 public class Personas {
+
     private String iD;
     private String nombrel;
     private int edad;
@@ -14,8 +14,12 @@ public class Personas {
     private double peso;
     private double altura;
 
-    public Personas(String iD, String nombrel, int edad, String sexo, String estadoCivil, double peso, double altura) {
-        this.iD = iD;
+    public Personas(String iD, String nombrel, int edad, String sexo, String estadoCivil, double peso, double altura) throws Exception {
+        if (iD.matches("[a-zA-z0-9]+")) {
+            this.iD = iD;
+        } else {
+            throw new Exception("El ID esta incorrecto");
+        }
         this.nombrel = nombrel;
         this.edad = edad;
         this.sexo = sexo;
@@ -31,8 +35,13 @@ public class Personas {
         return iD;
     }
 
-    public void setiD(String iD) {
-        this.iD = iD;
+    public void setiD(String iD) throws Exception {
+        if (iD.matches("[a-zA-z0-9]+")) {
+            this.iD = iD;
+        } else {
+            throw new Exception("El ID esta incorrecto");
+        }
+
     }
 
     public String getNombrel() {
@@ -87,7 +96,5 @@ public class Personas {
     public String toString() {
         return nombrel;
     }
-    
-    
-    
+
 }

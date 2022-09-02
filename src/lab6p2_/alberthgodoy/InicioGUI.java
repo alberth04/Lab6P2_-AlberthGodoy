@@ -1114,7 +1114,13 @@ public class InicioGUI extends javax.swing.JFrame {
                         }
                     }
                 }
-
+                //Limpiar entradas 
+                jCombo_TipoPersona1.setSelectedIndex(0);
+                jTextF_IDPersona.setText("");
+                jTextF_NombrePersona3.setText("");
+                jFormatT_EdadPersona.setText("");
+                jRadioButton_Masculino.setSelected(true);
+                jRadioButton_Soltero.setSelected(true);
             } else {
                 //Personas General
                 String ocupacion = jTextF_OcupacionPersona1.getText();
